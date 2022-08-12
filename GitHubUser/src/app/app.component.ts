@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from './core/services/user.service';
 import { UserI } from './core/models/user.interface';
 @Component({
@@ -6,7 +6,7 @@ import { UserI } from './core/models/user.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
   title = 'GitHubUser';
   userName: string = "";
   vacio: boolean = true;
@@ -25,13 +25,7 @@ export class AppComponent implements OnInit {
     following: 0
   };
 
-
-
   constructor(private _userService: UserService) { }
-
-  ngOnInit() {
-
-  }
 
   getUser() {
     if (this.userName != "") {
